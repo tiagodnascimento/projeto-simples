@@ -1,0 +1,104 @@
+COMANDOS LINUX UBUNTU
+
+- file /etc/shadow
+- tail -3 /etc/shadow
+id
+head
+wc (linha palavras e caracteres)
+ls -l listar conteúdos
+grep aluno /etc/passwd
+grep -i aluno /etc/passwd (para caixa alta)
+grep -i bash /etc/passwd
+more /etc/passwd
+grep -i /bin/false /etc/passwd - busca direta
+grep -iv /bin/false /etc/passwd
+mkdir
+ls -ld
+ls -l /bin/open
+rmdir para remover diretórios
+touch
+arquivos iniciados com - são regulares
+. copia para onde estou
+cp /etc/passwd .
+cmp /etc/passwd passwd - verfica a integridade do arquivo
+cp -r /bin bin2 - copia todos os diretorios e cria um novo com segundo nome
+mv 
+
+head -2 /etc/passwd - exibe as duas primeiras linhas
+Pipes: São representados pelo caracter | - Sâo implementação entre processos
+mudar o nome do prompt: export PS1="nome"
+
+more /etc/passwd /etc/group (| more)- Serve para parar uma leitura de arquivo até o fim fica paginado
+
+ls --help | more
+
+ls --help | wc -l
+wc -l /etc/passwd
+cat /etc/passwd | wc -l
+
+ls /bin | wc -l - contagem de arquivos
+find /usr -type f -print
+
+find /usr/ -type d -print | wc -l
+
+tail -3 /etc/passwd - mostra o final
+
+head -15 /etc/passwd | exibe as 15 primeiras linhas
+
+head -15 /etc/passwd | tail -6 - exibe da 10 a 15 linha
+
+wc -l  /etc/passwd - contar linhas
+tail -26 /etc/passwd | head -6
+
+cut -d: -f1 /etc/passwd - para exibir os usernames
+cut -d: -f1 /etc/passwd | sort - para listar em ordem
+cut -d: -f3 /etc/passwd | sort -n - ordenação númerica
+cut -d: -f1,3 /etc/passwd | sort
+sort /etc/passwd | cut -d: -f1 - serve para listar os usuarios 
+cut -d: -f3,1 /etc/passwd | sort -n 
+
+cat /etc/passwd | awk -F:'{print $3,$1}' | sort -n
+
+REDIRECIONAMENTOS: Em linha de comando, a entrada é o teclado e a saída é o Monitor e os redirecionamentos mudam isso.
+echo "teste"
+echo "teste" >  teste.txt - enviar arquivo
+more teste.txt
+echo "linha1" > teste.txt
+more teste.txt
+echo "linha2" >> teste.txt
+
+
+mkdir teste > erro.txt
+ls -l
+mkdir teste 2> erro.txt
+more erro.txt
+saida padrão: >, >>, 1>, 1>>
+saida de erro: 2>, 2>>
+
+ls /usr /tmp
+ls /usr /tm 2> erro.txt > saida.txt
+more erro.txt
+more saida.txt
+
+SCRIPTS São roteiros, são arquivos de texto interpretados. São executáveis
+
+- File /etc/init.d/rc.local - verificar tipo de arquivo
+- more /etc/init.d/rc.local
+
+Editor de texto vi/vim Tem dois modos:
+Modo Inserção e Modo Comando
+
+Modo inserção: i,o, a
+
+x - exclui uma letra
+ 
+echo $PATH - Adicionar valor na variavel
+
+Permissão de arquivo: chmod 755
+export PATH=$PATH:/home/aluno
+echo $PATH
+sudo halt
+
+
+
+
